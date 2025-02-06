@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import ProfileCard from "../components/ProfileCard";
+import ProfilePage from "../pages/ProfilePage";
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<ProfileCard />} />
+      <Route path="/" element={<ProfilePage />} />
     </Routes>
   );
 };

@@ -6,8 +6,16 @@ class ApiService {
   }
   async getAll() {
     try {
-      const response = await axios.get(`${this.url}`);
+      const response = await axios.get(`${this.urWl}`);
       return response.data;
+    } catch (error) {
+      alert("Ürünleri getiriken hata oldu");
+    }
+  }
+  async getOne(id) {
+    try {
+      const response = await axios.get(`${this.url}/${id}`);
+      return response;
     } catch (error) {
       alert("Ürünleri getiriken hata oldu");
     }
