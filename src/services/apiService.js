@@ -6,8 +6,8 @@ class ApiService {
   }
   async getAll() {
     try {
-      const response = await axios.get(`${this.urWl}`);
-      return response.data;
+      const response = await axios.get(`${this.url}`);
+      return response;
     } catch (error) {
       alert("Ürünleri getiriken hata oldu");
     }
@@ -23,7 +23,7 @@ class ApiService {
   async makePost(obj) {
     try {
       const response = await axios.post(`${this.url}`, obj);
-      return response.data;
+      return response;
     } catch (error) {
       alert("Ekleme sırasında hata oldu");
     }
@@ -31,7 +31,7 @@ class ApiService {
   async makePut(id, obj) {
     try {
       const response = await axios.put(`${this.url}/${id}`, obj);
-      return response.data;
+      return response;
     } catch (error) {
       console.error("POST isteği sırasında hata oluştu:", error);
       throw error;

@@ -1,15 +1,19 @@
 // src/reducers/userReducer.js
 
 export const initialState = {
-  user: null, // Başlangıçta kullanıcı verisi yok
+  user: [], // Başlangıçta kullanıcı verisi yok
   loading: false, // Yükleniyor durumu
   error: null, // Hata durumu
+  isDarkMode: false,
 };
 
 // userReducer fonksiyonunun doğru şekilde tanımlanması
 const userReducer = (state, action) => {
   // Parametre olarak state ve action almalı
   switch (action.type) {
+    case "TOGGLE_THEME":
+      return { ...state, isDarkMode: !state.isDarkMode };
+
     case "SET_USER":
       // Kullanıcı verisini state'e set eder
       return {
@@ -19,7 +23,7 @@ const userReducer = (state, action) => {
         error: null, // Hata sıfırlanır
       };
     case "SET_LOADING":
-      // Yükleniyor durumuna geçer
+      // Yükleni  yor durumuna geçer
       return {
         ...state,
         loading: true,

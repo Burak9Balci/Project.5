@@ -25,7 +25,11 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-page">
-      <h1 className="profile-page__title">User Profile</h1>
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <button onClick={() => dispatch({ type: "TOGGLE_THEME" })}>
+          {state.isDarkMode ? "🌞 Aydınlık Mod" : "🌙 Karanlık Mod"}
+        </button>
+      </div>
       {state.user && <ProfileCard user={state.user} />}
     </div>
   );
