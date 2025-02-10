@@ -10,7 +10,6 @@ const ProfileCard = ({ user }) => {
       <Row>
         <Col>
           <Card className="profile-card position-relative">
-            {/* Güncelleme Butonu */}
             <Button
               variant="primary"
               className="profile-card__edit-btn"

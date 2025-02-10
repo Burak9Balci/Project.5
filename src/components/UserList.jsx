@@ -23,18 +23,15 @@ const UserList = () => {
     fetchUsers();
   }, []);
 
-  // Kullanıcıyı silme işlemi
   const handleDelete = async (id) => {
     try {
-      await api.makeDelete(id); // API'ye DELETE isteği gönder
+      await api.makeDelete(id); // API'ye DELETE isteği gönderir
       const updatedUsers = state.user.filter((user) => user.id !== id);
       dispatch({ type: "SET_USER", payload: updatedUsers });
     } catch (error) {
       alert("Kullanıcı silinirken hata oluştu!");
     }
   };
-
-  // Yeni kullanıcı ekleme
 
   // Tablo kolonları
   const columns = [
@@ -66,10 +63,9 @@ const UserList = () => {
   return (
     <div>
       <h2>Kullanıcı Listesi</h2>
-      {/* Hata mesajı */}
+
       {state.error && <p style={{ color: "red" }}>{state.error}</p>}
 
-      {/* Yükleniyor durumu */}
       {state.loading ? (
         <p>Yükleniyor...</p>
       ) : (
